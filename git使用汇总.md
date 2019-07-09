@@ -163,6 +163,10 @@ gerrit
 很多时候其他人删除了远程分支，但我们自己电脑上还有一大堆 origin/... 这些“本地远程分支”，可执行以下指令同步删除：
 `git remote prune origin`
 
+## 同时推送到多个源：
+`git remote set-url --add --push origin https://github.com/linvanda/wecarswoole.git`
+这样 git push 的时候就会 push 到多个源。
+
 ## 其它实践问题：
 - 永远不要将 test 合并到开发分支；
 - 要经常将 master 合并到自己到开发分支；

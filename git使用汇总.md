@@ -95,6 +95,8 @@
 `git blame filename`
 
 ## 历史日志 log：
+- `git log --grep="test"` 搜索提交信息中包含 test 的
+- `git log -S abc` 搜索修改内容包含"abc"的 commit
 - `git log --date=relative` 以相对日期格式显示日志（如2 hours ago）
 - `git log —oneline` 一行紧凑显示提交id和注释
 - `git log --abbrev-commit` 显示短 commit id

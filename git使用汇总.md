@@ -169,6 +169,13 @@ gerrit
 `git remote set-url --add --push origin https://github.com/linvanda/wecarswoole.git`
 这样 git push 的时候就会 push 到多个源。
 
+## 换行符问题（mac、windows、linux混合开发时可能遇到）
+`git config --global core.autocrlf true` （提交时自动将CRLF转成LF，检出时将LF转成CRLF）
+`git config --global core.autocrlf input` (提交时自动将CRLF转成LF，检出时不处理(意味着检出时是LF))
+（以上两个都是保证git仓库中是LF）
+`git config --global core.autocrlf false` (关闭，不处理，是啥就是啥)
+
+
 ## 其它实践问题：
 - 永远不要将 test 合并到开发分支；
 - 要经常将 master 合并到自己到开发分支；

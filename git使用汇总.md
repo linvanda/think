@@ -163,7 +163,7 @@ gerrit
 
 ## 删除远程不存在的“本地远程分支“：
 很多时候其他人删除了远程分支，但我们自己电脑上还有一大堆 origin/... 这些“本地远程分支”，可执行以下指令同步删除：
-`git remote prune origin`
+`git remote prune origin` 或者`git pull -p`
 
 ## 同时推送到多个源：
 `git remote set-url --add --push origin https://github.com/linvanda/wecarswoole.git`

@@ -75,6 +75,12 @@
 - `git diff master HEAD` 当前的HEAD相对于master分支最近提交有哪些不同
 - `git show commitID` 本次提交相对于上次提交有何不同
 
+## 比较两个分支代码差异
+场景：当我们从 master 拉新分支（如 branch_a）进行较大功能开发完成并测试上线，而后线上发现问题，一时定位不到问题所在，此时我们想看看 branch_a 相对于 master 改了什么，如果直接用 git diff 很难找。可以按如下步骤：
+1. 进入到新分支：`git checkout branch_a`;
+2. 比较新分支相对于 master 修改了哪些文件：`git diff master --stat`;
+3. 从列出的文件中挑出可能相关的文件（特别是有 + 也有 - 的），逐一文件比较诧异，如：`git diff filename_a`;
+
 ## 撤销修改：
 - 撤销 workspace 中某个文件的修改：`git checkout < filename >`。
   变体：`git checkout`：撤销工作区所有文件的修改。

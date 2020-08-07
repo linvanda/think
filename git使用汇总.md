@@ -128,6 +128,11 @@ git checkout B
 git cherry-pick commitid-from-A
 ```
 
+## 统计某人在某段时间内代码行数
+```
+git log --since=2020-07-01 --until=2020-07-31 --author="xiong.luo" --pretty=tformat: --numstat | awk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }'
+```
+
 ## 撤销合并：
 1. 查看合并提交详情：git show mergecommitid，会有如下一行：Merge: 022ff6f b2cd947，其中022ff6f和 b2cd947分别是两个分支合并前最近提交的commitId。
 2. 撤销合并时用-m指定需要以谁为准（主干mainline）：

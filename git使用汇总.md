@@ -180,6 +180,14 @@ gerrit
 `git remote set-url --add --push origin https://github.com/linvanda/wecarswoole.git`
 这样 git push 的时候就会 push 到多个源。
 
+## 打标签（tag):
+- 打标签：`git tag -a v1.0.1 -m "第一版本"`
+- 推送到远程：`git push --tags`
+
+## 删除标签：
+- 删除本地标签：`git tag -d v1.0.1`
+- 删除远程标签：`git push origin :refs/tags/v1.0.1`
+
 ## 换行符问题（mac、windows、linux混合开发时可能遇到）
 - `git config --global core.autocrlf true` （提交时自动将CRLF转成LF，检出时将LF转成CRLF）
 - `git config --global core.autocrlf input` (提交时自动将CRLF转成LF，检出时不处理(意味着检出时是LF))
